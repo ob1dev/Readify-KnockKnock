@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="Readify.KnockKnock.RedPill" CodeBehind="RedPill.svc.cs" %>

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Readify.KnockKnock", "Readify.KnockKnock\Readify.KnockKnock.csproj", "{DC945B9C-E36D-41AF-96EF-ED40D1E0023D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Readify.KnockKnock.Tests", "Readify.KnockKnock.Tests\Readify.KnockKnock.Tests.csproj", "{36587BEA-094C-4AF9-A026-C79F27A707C2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DC945B9C-E36D-41AF-96EF-ED40D1E0023D} = {DC945B9C-E36D-41AF-96EF-ED40D1E0023D}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DC945B9C-E36D-41AF-96EF-ED40D1E0023D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC945B9C-E36D-41AF-96EF-ED40D1E0023D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC945B9C-E36D-41AF-96EF-ED40D1E0023D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC945B9C-E36D-41AF-96EF-ED40D1E0023D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36587BEA-094C-4AF9-A026-C79F27A707C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36587BEA-094C-4AF9-A026-C79F27A707C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36587BEA-094C-4AF9-A026-C79F27A707C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36587BEA-094C-4AF9-A026-C79F27A707C2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
