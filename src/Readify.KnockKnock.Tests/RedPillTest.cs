@@ -47,6 +47,25 @@ namespace Readify.KnockKnock.Tests
       var test11 = client.FibonacciNumber(46);
       var test12 = client.FibonacciNumber(47);
       var test13 = client.FibonacciNumber(47);
+
+      // Act
+      try
+      {
+        var test14 = client.FibonacciNumber(93);
+      }
+      catch (Exception ex) when (ex.Message.StartsWith("Value cannot be greater than 92, since the result will cause a 64-bit integer overflow."))
+      {
+        // Silently catch the expected exception.
+      }
+
+      try
+      {
+        var test14 = client.FibonacciNumber(-93);
+      }
+      catch (Exception ex) when (ex.Message.StartsWith("Value cannot be less than 92, since the result will cause a 64-bit integer overflow."))
+      {
+        // Silently catch the expected exception.
+      }
       
       // Assert
       Assert.IsTrue(test1 == -3);

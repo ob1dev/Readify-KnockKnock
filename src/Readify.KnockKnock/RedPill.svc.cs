@@ -36,6 +36,16 @@ namespace Readify.KnockKnock
     /// <returns>The number at n position in the Fibonacci sequence.</returns>
     public long FibonacciNumber(long n)
     {
+      if (n > 92)
+      {
+        throw new ArgumentOutOfRangeException(nameof(n), "Value cannot be greater than 92, since the result will cause a 64-bit integer overflow.");
+      }
+
+      if (n < -92)
+      {
+        throw new ArgumentOutOfRangeException(nameof(n), "Value cannot be less than 92, since the result will cause a 64-bit integer overflow.");
+      }
+
       var properties = new Dictionary<string, string> { { "Argument 'n'", n.ToString() } };
       telemetry.TrackEvent("FibonacciNumber", properties);
 
