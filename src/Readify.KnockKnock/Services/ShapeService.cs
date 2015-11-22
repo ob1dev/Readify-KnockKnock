@@ -63,16 +63,16 @@ namespace Readify.KnockKnock.Services
       {
         triangleExist = false;
       }
-      // The sum of the lengths of any two sides of a triangle must be greater than or equal to the length of the third side.
-      else if (((long) a + b) < c)
+      // The sum of the lengths of any two sides of a triangle must be greater than the length of the third side for non-degenerate triangle.
+      else if (((long) a + b) <= c)
       {
         triangleExist = false;
       }
-      else if (((long) a + c) < b)
+      else if (((long) a + c) <= b)
       {
         triangleExist = false;
       }
-      else if (((long) b + c) < a)
+      else if (((long) b + c) <= a)
       {
         triangleExist = false;
       }
