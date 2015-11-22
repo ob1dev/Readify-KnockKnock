@@ -131,26 +131,27 @@ namespace Readify.KnockKnock.Tests
 
       // Act
       var test1 = client.WhatShapeIsThis(0, 0, 0);
-      var test2 = client.WhatShapeIsThis(-1, 0, 1);      
-      var test3 = client.WhatShapeIsThis(-1, -1, -1);
-      var test4 = client.WhatShapeIsThis(-1, 1, 1);
-      var test5 = client.WhatShapeIsThis(1, -1, 1);
-      var test6 = client.WhatShapeIsThis(1, 1, -1);
-      var test7 = client.WhatShapeIsThis(3, 3, 5000);
-      var test8 = client.WhatShapeIsThis(1, 1, 2147483647);
-      var test9 = client.WhatShapeIsThis(-2147483648, -2147483648, -2147483648);
+      var test2 = client.WhatShapeIsThis(1, 1, 2);
+      var test3 = client.WhatShapeIsThis(-1, 0, 1);      
+      var test4 = client.WhatShapeIsThis(-1, -1, -1);
+      var test5 = client.WhatShapeIsThis(-1, 1, 1);
+      var test6 = client.WhatShapeIsThis(1, -1, 1);
+      var test7 = client.WhatShapeIsThis(1, 1, -1);
+      var test8 = client.WhatShapeIsThis(3, 3, 5000);
+      var test9 = client.WhatShapeIsThis(1, 1, 2147483647);
+      var test10 = client.WhatShapeIsThis(-2147483648, -2147483648, -2147483648);
 
-      var test10 = client.WhatShapeIsThis(1, 1, 1);
-      var test11 = client.WhatShapeIsThis(2147483647, 2147483647, 2147483647);
+      var test11 = client.WhatShapeIsThis(1, 1, 1);
+      var test12 = client.WhatShapeIsThis(2147483647, 2147483647, 2147483647);
 
-      var test12 = client.WhatShapeIsThis(3, 3, 5);
-      var test13 = client.WhatShapeIsThis(10, 10, 5);
-      var test14 = client.WhatShapeIsThis(15, 1, 15);
+      var test13 = client.WhatShapeIsThis(3, 3, 5);
+      var test14 = client.WhatShapeIsThis(10, 10, 5);
+      var test15 = client.WhatShapeIsThis(15, 1, 15);
 
-      var test15 = client.WhatShapeIsThis(3, 4, 5);
-      var test16 = client.WhatShapeIsThis(5, 3, 4);
-      var test17 = client.WhatShapeIsThis(4, 5, 3);
-      var test18 = client.WhatShapeIsThis(2147483647, 2147483647, 2147483647);
+      var test16 = client.WhatShapeIsThis(3, 4, 5);
+      var test17 = client.WhatShapeIsThis(5, 3, 4);
+      var test18 = client.WhatShapeIsThis(4, 5, 3);
+      var test19 = client.WhatShapeIsThis(2147483647, 2147483647, 2147483647);
 
       // Assert
       Assert.IsTrue(test1 == TriangleType.Error);
@@ -162,18 +163,19 @@ namespace Readify.KnockKnock.Tests
       Assert.IsTrue(test7 == TriangleType.Error);
       Assert.IsTrue(test8 == TriangleType.Error);
       Assert.IsTrue(test9 == TriangleType.Error);
+      Assert.IsTrue(test10 == TriangleType.Error);
 
-      Assert.IsTrue(test10 == TriangleType.Equilateral);
       Assert.IsTrue(test11 == TriangleType.Equilateral);
+      Assert.IsTrue(test12 == TriangleType.Equilateral);
 
-      Assert.IsTrue(test12 == TriangleType.Isosceles);
       Assert.IsTrue(test13 == TriangleType.Isosceles);
       Assert.IsTrue(test14 == TriangleType.Isosceles);
+      Assert.IsTrue(test15 == TriangleType.Isosceles);
 
-      Assert.IsTrue(test15 == TriangleType.Scalene);
       Assert.IsTrue(test16 == TriangleType.Scalene);
       Assert.IsTrue(test17 == TriangleType.Scalene);
-      Assert.IsTrue(test18 == TriangleType.Equilateral);
+      Assert.IsTrue(test18 == TriangleType.Scalene);
+      Assert.IsTrue(test19 == TriangleType.Equilateral);
 
       // Always close the client.
       client.Close();
