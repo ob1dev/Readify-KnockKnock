@@ -48,21 +48,22 @@ namespace Readify.KnockKnock.Tests
       var test12 = client.FibonacciNumber(47);
       var test13 = client.FibonacciNumber(47);
 
-      // Act
+      long? test14 = null;
       try
       {
-        var test14 = client.FibonacciNumber(93);
+        test14 = client.FibonacciNumber(93);
       }
       catch (Exception ex) when (ex.Message.StartsWith("Value cannot be greater than 92, since the result will cause a 64-bit integer overflow."))
       {
         // Silently catch the expected exception.
       }
 
+      long? test15 = null;
       try
       {
-        var test14 = client.FibonacciNumber(-93);
+        test15 = client.FibonacciNumber(-93);
       }
-      catch (Exception ex) when (ex.Message.StartsWith("Value cannot be less than 92, since the result will cause a 64-bit integer overflow."))
+      catch (Exception ex) when (ex.Message.StartsWith("Value cannot be less than -92, since the result will cause a 64-bit integer overflow."))
       {
         // Silently catch the expected exception.
       }
@@ -81,7 +82,8 @@ namespace Readify.KnockKnock.Tests
       Assert.IsTrue(test11 == 1836311903);
       Assert.IsTrue(test12 == 2971215073);
       Assert.IsTrue(test13 == 2971215073);
-      
+      Assert.IsTrue(test14 == null);
+      Assert.IsTrue(test15 == null);
 
       // Always close the client.
       client.Close();
@@ -95,9 +97,10 @@ namespace Readify.KnockKnock.Tests
       client.InnerChannel.OperationTimeout = TimeSpan.FromMinutes(5);
 
       // Act
+      string test1 = null;
       try
       {
-        var test1 = client.ReverseWords(null);
+        test1 = client.ReverseWords(null);
       }
       catch (Exception ex) when (ex.Message.StartsWith("Value cannot be null."))
       {
@@ -121,6 +124,7 @@ namespace Readify.KnockKnock.Tests
       var test16 = client.ReverseWords("!B!A!N!G!S!");
 
       // Assert
+      Assert.IsTrue(test1 == null);
       Assert.IsTrue(test2.Equals(" "));
       Assert.IsTrue(test3.Equals("tac"));
       Assert.IsTrue(test4.Equals("gniliart ecaps "));
