@@ -9,7 +9,7 @@ namespace Readify.KnockKnock
   /// <summary>
   /// Represent the Red Pill service.
   /// </summary>
-  [ServiceBehavior(Namespace = "http://readify-knockknock.azurewebsites.net/", IncludeExceptionDetailInFaults = true)]
+  [ServiceBehavior(Namespace = "http://KnockKnock.readify.net", IncludeExceptionDetailInFaults = true)]
   public class RedPill : IRedPill
   {
     // The Readify token associated with the oleg.burov@outlook.com email.
@@ -36,16 +36,6 @@ namespace Readify.KnockKnock
     /// <returns>The number at n position in the Fibonacci sequence.</returns>
     public long FibonacciNumber(long n)
     {
-      if (n > 92)
-      {
-        throw new ArgumentOutOfRangeException(nameof(n), "Value cannot be greater than 92, since the result will cause a 64-bit integer overflow.");
-      }
-
-      if (n < -92)
-      {
-        throw new ArgumentOutOfRangeException(nameof(n), "Value cannot be less than 92, since the result will cause a 64-bit integer overflow.");
-      }
-
       var properties = new Dictionary<string, string> { { "Argument 'n'", n.ToString() } };
       telemetry.TrackEvent("FibonacciNumber", properties);
 
@@ -55,7 +45,12 @@ namespace Readify.KnockKnock
       {
         result = new FibonacciNumberService().Calculate(n);
       }
-      catch(Exception exception)
+      catch (ArgumentOutOfRangeException)
+      {
+        // The ArgumentOutOfRangeException is expected, therefore re-throw it further.
+        throw;
+      }
+      catch (Exception exception)
       {
         telemetry.TrackException(exception);
       }
@@ -70,12 +65,7 @@ namespace Readify.KnockKnock
     /// <returns>The source string where words are reversed.</returns>
     public string ReverseWords(string s)
     {
-      if (s == null)
-      {
-        throw new ArgumentNullException(nameof(s), "Value cannot be null.");
-      }
-
-      var properties = new Dictionary<string, string> { { "Argument 's'", string.Format("'{0}'", s) } };
+      var properties = new Dictionary<string, string> { { "Argument 's'", string.Format("'{0}'", s == null ? "null" : s) } };
       telemetry.TrackEvent("ReverseWords", properties);          
 
       string result = string.Empty;
@@ -83,6 +73,11 @@ namespace Readify.KnockKnock
       try
       {
         result = new StringReverseService().ReverseWords(s);
+      }
+      catch (ArgumentNullException)
+      {
+        // The ArgumentNullException is expected, therefore re-throw it further.
+        throw;
       }
       catch (Exception exception)
       {

@@ -10,12 +10,27 @@ namespace Readify.KnockKnock.Services
   public class FibonacciNumberService
   {
     /// <summary>
+    /// The threshold for Fibonacci number if using long (Int64) type for calculating the result.
+    /// </summary>
+    protected readonly long threshold = 92;
+
+    /// <summary>
     /// Calculates the negative Fibonacci sequence.
     /// </summary>
     /// <param name="n">The index in the sequence.</param>
     /// <returns>The Fibonacci number at specified position.</returns>
     public long Calculate(long n)
     {
+      if (n > threshold)
+      {
+        throw new ArgumentOutOfRangeException(nameof(n), $"Value cannot be greater than {threshold}, since the result will cause a 64-bit integer overflow.");
+      }
+
+      if (n < -threshold)
+      {
+        throw new ArgumentOutOfRangeException(nameof(n), $"Value cannot be less than {-threshold}, since the result will cause a 64-bit integer overflow.");
+      }
+
       var key = string.Format("FibonacciNumber{0}", n);
       var cacheItem = MemoryCache.Default.GetCacheItem(key);
 

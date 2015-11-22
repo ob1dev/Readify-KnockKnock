@@ -8,7 +8,7 @@ namespace Readify.KnockKnock
   /// <summary>
   /// Represents the Red Pill service contract.
   /// </summary>
-  [ServiceContract(Namespace = "http://readify-knockknock.azurewebsites.net/", Name = "IRedPill")]
+  [ServiceContract(Namespace = "http://KnockKnock.readify.net", Name = "IRedPill")]
   public interface IRedPill
   {
     [OperationContract]

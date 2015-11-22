@@ -18,11 +18,16 @@ namespace Readify.KnockKnock.Services
     /// <summary>
     /// Reverses words in the specified string.
     /// </summary>
-    /// <param name="value">The string.</param>
+    /// <param name="s">The string.</param>
     /// <returns>The string with reversed words.</returns>
-    public string ReverseWords(string value)
+    public string ReverseWords(string s)
     {
-      var key = string.Format("ReverseWords{0}", value.GetHashCode());
+      if (s == null)
+      {
+        throw new ArgumentNullException(nameof(s), "Value cannot be null.");
+      }
+
+      var key = string.Format("ReverseWords{0}", s.GetHashCode());
       var cacheItem = MemoryCache.Default.GetCacheItem(key);
 
       string result = string.Empty;
@@ -33,7 +38,7 @@ namespace Readify.KnockKnock.Services
       }
       else
       {
-        var words = this.Split(value, separator);
+        var words = this.Split(s, separator);
         var reversedWords = new StringBuilder();
 
         foreach (var word in words)
@@ -89,6 +94,7 @@ namespace Readify.KnockKnock.Services
         for (int index = 0; index < value.Length; index++)
         {
           if (this.IsDelimiterChar(value[index], separator))
+          //if (value[index].Equals(' '))
           {
             int endIndex = index == 0 ? index + 1 : index;
 
