@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="6c6270a0-349b-4729-a2c5-ca17614882ff" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="85e297ad-dc5b-4630-be93-e8b260673f57" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,12 +22,12 @@
     <MetadataSource Address="http://localhost:46412/RedPill.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="RedPill.wsdl" MetadataType="Wsdl" ID="c6971f01-086b-4e39-a62a-9f908c286c85" SourceId="1" SourceUrl="http://localhost:46412/RedPill.svc?wsdl" />
-    <MetadataFile FileName="RedPill.xsd" MetadataType="Schema" ID="3aa7fead-4edb-43b1-8b58-8cb452ffca90" SourceId="1" SourceUrl="http://localhost:46412/RedPill.svc?xsd=xsd0" />
-    <MetadataFile FileName="RedPill.disco" MetadataType="Disco" ID="d615c9ef-1b8c-432e-976a-c32d8424ca03" SourceId="1" SourceUrl="http://localhost:46412/RedPill.svc?disco" />
-    <MetadataFile FileName="RedPill1.xsd" MetadataType="Schema" ID="f0fe3372-ced4-4c46-8c89-e3e3ce95e6cb" SourceId="1" SourceUrl="http://localhost:46412/RedPill.svc?xsd=xsd1" />
-    <MetadataFile FileName="RedPill1.wsdl" MetadataType="Wsdl" ID="d5fe3fe4-1688-4540-978d-898526273c60" SourceId="1" SourceUrl="http://localhost:46412/RedPill.svc?wsdl=wsdl0" />
-    <MetadataFile FileName="RedPill2.xsd" MetadataType="Schema" ID="201850ae-a2ba-4198-951d-ff518ba771f9" SourceId="1" SourceUrl="http://localhost:46412/RedPill.svc?xsd=xsd2" />
+    <MetadataFile FileName="RedPill.wsdl" MetadataType="Wsdl" ID="94904eb7-836c-4306-8e09-dcb5ee4517a7" SourceId="1" SourceUrl="http://localhost:46412/RedPill.svc?wsdl" />
+    <MetadataFile FileName="RedPill.xsd" MetadataType="Schema" ID="fa7a4caa-f447-49d1-aa93-4fe6e16b7b63" SourceId="1" SourceUrl="http://localhost:46412/RedPill.svc?xsd=xsd0" />
+    <MetadataFile FileName="RedPill.disco" MetadataType="Disco" ID="b60f2c61-4ab5-4433-9ef9-e55d25e0d2f2" SourceId="1" SourceUrl="http://localhost:46412/RedPill.svc?disco" />
+    <MetadataFile FileName="RedPill1.xsd" MetadataType="Schema" ID="15e663aa-8250-45ad-8c86-0673736112cf" SourceId="1" SourceUrl="http://localhost:46412/RedPill.svc?xsd=xsd1" />
+    <MetadataFile FileName="RedPill1.wsdl" MetadataType="Wsdl" ID="043380d0-586f-4bf7-afd7-c9324a285751" SourceId="1" SourceUrl="http://localhost:46412/RedPill.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="RedPill2.xsd" MetadataType="Schema" ID="5afb0dbe-ab2d-4dfa-afe6-488de6dc2af8" SourceId="1" SourceUrl="http://localhost:46412/RedPill.svc?xsd=xsd2" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
