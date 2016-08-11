@@ -71,6 +71,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Services\FibonacciNumberServiceTest.cs" />
+    <Compile Include="Services\ShapeServiceTest.cs" />
+    <Compile Include="Services\StringReverseServiceTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
@@ -113,6 +116,12 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Readify.KnockKnock\Readify.KnockKnock.csproj">
+      <Project>{dc945b9c-e36d-41af-96ef-ed40d1e0023d}</Project>
+      <Name>Readify.KnockKnock</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
