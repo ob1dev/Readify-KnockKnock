@@ -7,7 +7,7 @@ namespace Readify.KnockKnock.Tests
   /// <summary>
   /// Run the 'Readify.KnockKnock' project in the IIS Express (Debug -> Start Without Debug) before running the tests.
   /// </summary>
-  [TestClass]
+  ///[TestClass]
   public class RedPillTest
   {
     [TestMethod]
