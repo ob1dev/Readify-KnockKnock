@@ -9,25 +9,7 @@
 //------------------------------------------------------------------------------
 
 namespace Readify.KnockKnock.Tests.RedPill {
-    using System.Runtime.Serialization;
     
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TriangleType", Namespace="http://schemas.datacontract.org/2004/07/Readify.KnockKnock")]
-    public enum TriangleType : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Error = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Equilateral = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Isosceles = 2,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Scalene = 3,
-    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://KnockKnock.readify.net", ConfigurationName="RedPill.IRedPill")]
@@ -52,10 +34,10 @@ namespace Readify.KnockKnock.Tests.RedPill {
         System.Threading.Tasks.Task<string> ReverseWordsAsync(string s);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://KnockKnock.readify.net/IRedPill/WhatShapeIsThis", ReplyAction="http://KnockKnock.readify.net/IRedPill/WhatShapeIsThisResponse")]
-        Readify.KnockKnock.Tests.RedPill.TriangleType WhatShapeIsThis(int a, int b, int c);
+        Readify.KnockKnock.TriangleType WhatShapeIsThis(int a, int b, int c);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://KnockKnock.readify.net/IRedPill/WhatShapeIsThis", ReplyAction="http://KnockKnock.readify.net/IRedPill/WhatShapeIsThisResponse")]
-        System.Threading.Tasks.Task<Readify.KnockKnock.Tests.RedPill.TriangleType> WhatShapeIsThisAsync(int a, int b, int c);
+        System.Threading.Tasks.Task<Readify.KnockKnock.TriangleType> WhatShapeIsThisAsync(int a, int b, int c);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -109,11 +91,11 @@ namespace Readify.KnockKnock.Tests.RedPill {
             return base.Channel.ReverseWordsAsync(s);
         }
         
-        public Readify.KnockKnock.Tests.RedPill.TriangleType WhatShapeIsThis(int a, int b, int c) {
+        public Readify.KnockKnock.TriangleType WhatShapeIsThis(int a, int b, int c) {
             return base.Channel.WhatShapeIsThis(a, b, c);
         }
         
-        public System.Threading.Tasks.Task<Readify.KnockKnock.Tests.RedPill.TriangleType> WhatShapeIsThisAsync(int a, int b, int c) {
+        public System.Threading.Tasks.Task<Readify.KnockKnock.TriangleType> WhatShapeIsThisAsync(int a, int b, int c) {
             return base.Channel.WhatShapeIsThisAsync(a, b, c);
         }
     }

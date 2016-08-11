@@ -84,9 +84,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Service References\RedPill\Readify.KnockKnock.Tests.RedPill.TriangleType.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Service References\RedPill\RedPill.wsdl" />
     <None Include="Service References\RedPill\RedPill.xsd">
       <SubType>Designer</SubType>
